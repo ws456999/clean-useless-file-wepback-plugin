@@ -1,0 +1,27 @@
+**/dist/*
+.DS_Store
+**/.DS_Store
+node_modules
+alioss.config.json
+.idea/
+.python-version
+envloader/mobile/plugins/app/*
+
+# ts build cache
+*.tsbuildinfo
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/snippets
+
+.DS_Store
+
+tmp/*
+!/tmp/.gitkeep
+.history
+
+**/unused-files.json

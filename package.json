@@ -1,0 +1,14 @@
+{
+  "name": "clean-useless-file-wepback-plugin",
+  "version": "1.0.0",
+  "description": "find or delete useless files with webpack plugins",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ws456999",
+  "license": "MIT",
+  "devDependencies": {
+    "shelljs": "^0.8.4"
+  }
+}
