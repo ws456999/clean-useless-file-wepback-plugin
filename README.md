@@ -6,7 +6,15 @@
 
 ```shell
 
-const UselessFile = require('index.js')
+npm install clean-useless-file-wepback-plugin
+
+```
+
+# config
+
+```js
+
+const UselessFile = require('clean-useless-file-wepback-plugin')
 
 plugins: [
   new UselessFile({
@@ -20,6 +28,5 @@ plugins: [
   })
 ]
 
-```
 
-# Development
+```

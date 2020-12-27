@@ -1,11 +1,21 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const UselessFile = require('../../index');
 const CopyPlugin = require("copy-webpack-plugin");
 const ASSET_PATH = `https://static.gllue.com/plugin/bootstrapper/123/`;
 
 const commonConfig = () => {
   const plugins = [
+    new UselessFile({
+      root: './src', // 项目目录
+      out: './fileList.json', // 输出文件列表
+      clean: false, // 删除文件,
+      exclude: [
+        /blitz/g,
+        // 'blitz-container'
+      ] // 排除文件列表, 格式为文件路径数组
+    }),
     new HtmlWebpackPlugin({
       template: "public/index.html",
       filename: path.resolve(__dirname, "../build/index.html"),
@@ -25,8 +35,7 @@ const commonConfig = () => {
         {
           test: /\.(js|jsx|ts|tsx)$/,
           // include: path.resolve(__dirname, "../src"),
-          include: [path.resolve(__dirname, "../src"), path.resolve('node_modules/@salesforce/')],
-          // exclude: /node_modules\/(?!@salesforce).+/,
+          include: [path.resolve(__dirname, "../src")],
           use: [
             {
               loader: "thread-loader",
@@ -69,14 +78,6 @@ const commonConfig = () => {
                       }
                     }
                   ],
-                  [
-                    "babel-plugin-import",
-                    {
-                      style: false,
-                      libraryDirectory: "lib",
-                      libraryName: "blitz-ui"
-                    }
-                  ]
                 ]
               }
             },
