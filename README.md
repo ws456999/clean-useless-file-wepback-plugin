@@ -1,6 +1,6 @@
 # clean-useless-file-wepback-plugin
 
-> find or delete useless files with webpack plugins
+> find or delete useless files with webpack4 plugins
 
 # Installation
 
